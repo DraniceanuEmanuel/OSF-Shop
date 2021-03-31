@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>OSF Shop</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="/assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/searchBar.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <span><img src="../assets/images/logo.png" /></span>
+                OSF Shop
+            </a>
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <ul class="navbar-nav ml-auto">
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <form action="/search" method="GET">
+                    <div class="searchbar">
+                        <input class="search_input" type="text" name="searchTerm" placeholder="Search...">
+                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                    </form>
+                    </div>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown"
+                            href="#">Men</a>
+                        <div class="dropdown-menu">
+                            <% men.forEach(function(men){ %>
+                                <a class="dropdown-item" href="/category/<%- men.id %>">
+                                    <%- men.name %>
+                                </a>
+                                <% }); %>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown"
+                            href="#">Women</a>
+                        <div class="dropdown-menu">
+                            <% women.forEach(function(women){ %>
+                                <a class="dropdown-item" href="/category/<%- women.id %> ">
+                                    <%- women.name %>
+                                </a>
+                                <% }); %>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown"
+                            href="#">Account</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/signin">Login</a>
+                            <a class="dropdown-item" href="/signup">Register</a>
+                        </div>
+                    </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <header>
+        <ol class="breadcrumb container">
+            <li class="breadcrumb-item active"><span>Home</span></a></li>
+        </ol>
+        </br>
+
+    </header>
+
+    </header>
+    <main>
+        <div class="bgimage"></div>
+    </main>
+    <footer class="footer-basic container">
+        <div class="social"></div>
+        <ul class="list-inline">
+            <li class="list-inline-item"></li>
+            <li class="list-inline-item"></li>
+            <li class="list-inline-item"></li>
+        </ul>
+        <p class="copyright">Copyright OSF © 2020</p>
+    </footer>
+    </footer>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

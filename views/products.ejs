@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>OSF Shop</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="/assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/product-card.css">
+    <script>
+        $(function () {
+            $('#breadcrumbs').breadcrumbsGenerator();
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <span><img src="../assets/images/logo.png" /></span>
+                OSF Shop
+            </a>
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown"
+                            href="#">Men</a>
+                        <div class="dropdown-menu">
+                            <% men.forEach(function(men){ %>
+                                <a class="dropdown-item" href="/category/<%- men.id %>">
+                                    <%- men.name %>
+                                </a>
+                                <% }); %>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown"
+                            href="#">Women</a>
+                        <div class="dropdown-menu">
+                            <% women.forEach(function(women){ %>
+                                <a class="dropdown-item" href="/category/<%- women.id %> ">
+                                    <%- women.name %>
+                                </a>
+                                <% }); %>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown"
+                            href="#">Account</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Login</a>
+                            <a class="dropdown-item" href="#">Register</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <ol class="breadcrumb container">
+            <li class="breadcrumb-item"><a href="/"><span>Home</span></a></li>
+            <li class="breadcrumb-item active"><span>
+                    <%- currentUrl %>
+                </span></a></li>
+
+        </ol>
+        </br>
+    </header>
+    <% if(product.length===0){ %>
+        <h4>There are no products in this category. Please select another category !</h4>
+        <% } else{ %>
+            <h4>Products</h4>
+            <% } %>
+                <br>
+                </header>
+                <main>
+                    <div class="container">
+                        <div class="row clearfix">
+                            <% product.forEach(function(product){ %>
+                                <div class="col-lg-3 col-md-4 col-sm-12">
+                                    <div class="card product_item">
+                                        <div class="body">
+                                            <div class="cp_img">
+                                                <img src="/images/<%= product.image_groups[0].images[0].link %> "
+                                                    alt="Product" class="img-fluid">
+                                                <div class="hover">
+                                                    <a href="javascript:void(0);"
+                                                        class="btn btn-primary btn-sm waves-effect"><i
+                                                            class="zmdi zmdi-plus"></i></a>
+                                                    <a href="javascript:void(0);"
+                                                        class="btn btn-primary btn-sm waves-effect"><i
+                                                            class="zmdi zmdi-shopping-cart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="product_details">
+                                                <h5><a href="/product/<%= product.id %> ">
+                                                        <%= product.name %>
+                                                    </a></h5>
+                                                <ul class="product_price list-unstyled">
+                                                    <li class="new_price">
+                                                        <%= product.price %> $
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }); %>
+                </main>
+                <footer class="footer-basic container">
+                    <div class="social"></div>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"></li>
+                        <li class="list-inline-item"></li>
+                        <li class="list-inline-item"></li>
+                    </ul>
+                    <p class="copyright">Copyright OSF © 2020</p>
+                </footer>
+                <script src="/assets/js/jquery.min.js"></script>
+                <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

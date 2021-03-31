@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>OSF Shop</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="/assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/product-detail.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <span><img src="../assets/images/logo.png" /></span>
+                OSF Shop
+            </a>
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown"
+                            href="#">Men</a>
+                        <div class="dropdown-menu">
+                            <% men.forEach(function(men){ %>
+                                <a class="dropdown-item" href="/category/<%- men.id %>">
+                                    <%- men.name %>
+                                </a>
+                                <% }); %>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown"
+                            href="#">Women</a>
+                        <div class="dropdown-menu">
+                            <% women.forEach(function(women){ %>
+                                <a class="dropdown-item" href="/category/<%- women.id %> ">
+                                    <%- women.name %>
+                                </a>
+                                <% }); %>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown"
+                            href="#">Account</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Login</a>
+                            <a class="dropdown-item" href="#">Register</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <ol class="breadcrumb container">
+            <li class="breadcrumb-item "><a href="/"><span>Home</span></a></li>
+            <li class="breadcrumb-item "><a href="javascript:history.back()"><span>Category</span></a></li>
+            <li class="breadcrumb-item active"><span>
+                    <%= currentUrl %>
+                </span></a></li>
+        </ol>
+    </header>
+    <main class="container">
+
+
+        <% for (var i=0; i < product.length; i++) { %>
+            <div class="left-column">
+                <img data-image="black" src="/images/<%= product[i].image_groups[0].images[0].link %>" alt="">
+                <img data-image="blue" src="/images/<%= product[i].image_groups[0].images[0].link %>" alt="">
+                <img data-image="red" class="active" src="/images/<%= product[i].image_groups[0].images[0].link %>"
+                    alt="">
+            </div>
+            <div class="right-column">
+                <div class="product-description">
+                    <span>
+                        <%- product[i].name %>
+                    </span>
+                    <h1>
+                        <%- product[i].name %>
+                    </h1>
+                    <p>
+                        <%- product[i].long_description %>
+                    </p>
+                </div>
+                <div class="product-configuration">
+                    <div class="product-color">
+                        <span></span>
+
+                        <div class="color-choose">
+                            <div>
+
+                            </div>
+                            <div>
+
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="cable-config">
+                        <span>Sizes</span>
+                        <div class="cable-choose">
+                            <br>
+                            <br>
+                            <button>S</button>
+                            <button>M</button>
+                            <button>L</button>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="product-price">
+                    <span>
+                        <%- product[i].price %> $
+                    </span>
+                    <% }; %>
+                        <a href="#" class="cart-btn">Add to cart</a>
+                </div>
+            </div>
+    </main>
+    <br>
+    <br>
+    <footer>
+        <footer class="footer-basic ">
+            <div class="social"></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"></li>
+                <li class="list-inline-item"></li>
+                <li class="list-inline-item"></li>
+            </ul>
+            <p class="copyright">Copyright OSF © 2020</p>
+        </footer>
+    </footer>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <script src="/assets/js/script.js" charset="utf-8"></script>
+</body>
+
+</html>

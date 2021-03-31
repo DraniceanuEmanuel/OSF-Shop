@@ -1,0 +1,36 @@
+
+
+h4 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+.container {
+  text-align: center;
+  
+}
+.button{
+  text-align: left;
+}
+.activeItem {
+  color:grey;
+}
+
+.bgimage {
+  width:100%;
+  height:400px;
+  background: url('/assets/images/homebackground.png');
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+}
+.bgimage h5 {
+  color:white;
+  text-shadow:2px 2px #333;
+}
+.cp_img {
+  object-fit: cover;
+}
